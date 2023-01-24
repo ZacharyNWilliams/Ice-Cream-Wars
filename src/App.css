@@ -1,0 +1,10 @@
+.main{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* targets all of mains children */
+.main > * {
+  flex:1
+}
