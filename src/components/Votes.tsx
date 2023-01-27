@@ -34,6 +34,7 @@ export function Votes(){
             </>
             :
             <>
+           
             <p><label> Chocolate</label> {chocolateVotes} ({displayPercentage(chocolateVotes, getTotal())})</p>
 
             <progress className = "progressChocolate" value= {chocolateVotes/getTotal()}> </progress>

@@ -4,9 +4,12 @@ import { Ad } from "./Ad";
 export function AdDesign(){
 
 
-    const [flavor, setFlavor] = useState<string>('vanilla');
-    const[isLight, setIsLight] = useState<boolean>(true);
+    const [flavor, setFlavor] = useState<string>('Choose A flavor');
+    
     const [fontSize, setFontSize] = useState<number>(24);
+
+    const[isDark, setIsDark] = useState<boolean>(true);
+    const [theme, setTheme] = useState(false);
 
     
 
@@ -15,8 +18,8 @@ export function AdDesign(){
         <h2>Ad Design</h2>
 
         <h2>What to support</h2>
-        <Ad flavor = {flavor} isLight = {isLight} fontSize = {fontSize}/>
-
+        <Ad flavor = {flavor} darkTheme = {true} fontSize = {fontSize}/>
+        
 
         <div className="button-bar">
         <button onClick={() => setFlavor("Chocolate")}>Chocolate</button>
@@ -25,11 +28,18 @@ export function AdDesign(){
 
         </div>
 
-        <h2>Color Theme</h2>
-        <div className="button-bar">
-        <button onClick={() => setIsLight(true)}>Light</button>
-        <button onClick={() => setIsLight(false)}>Dark</button>
-        </div>
+        <section className="ColorTheme ">
+        <p>Color Theme:</p>
+        <div></div>
+        <button disabled={isDark === false} onClick={() => setIsDark(false)}>
+          Light
+        </button>
+        :
+        <button disabled={isDark === true} onClick={() =>setIsDark(true)}>
+          Dark
+        </button>
+        <div></div>
+      </section>
 
         <h2>Font Size</h2>
         <div className="button-bar">
